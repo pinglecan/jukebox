@@ -1,0 +1,97 @@
+h1{
+    text-align: center;
+    color: red;
+}
+p{
+    color: white ;
+}
+
+body{
+    margin: 0;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    font-family: "Arial Black";
+    background-image: url("../img/silly.png");
+    text-align: center;
+}
+
+a{
+    color: gray;
+
+}
+
+
+header {
+    background: rgba(128, 128, 128, 0.5); /* Gray with 50% transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*padding: 1rem 2rem;*/
+}
+.logo {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+nav {
+    margin-left: auto;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #f0f0f0;
+    border-color: #333;
+    border-radius: 8px;
+}
+
+.nav-link:active {
+    background-color: #e0e0e0;
+}
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.github-link {
+    color: #1da1f2; /* You can use the GitHub color or any other color you like */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: #fff; /* Changes to white on hover */
+}
