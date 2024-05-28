@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Song;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
-class SongController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,12 @@ class SongController extends Controller
     public function index()
     {
         //view
-        $songs = Song::all();
-        return view('songs.index', ['songs' => $songs]);
+        $genres = genre::all();
+
+        //count the songs
+        $GenreCount = Genre->id::count();
+
+        return view('genres.index', ['genres' => $genres, 'GenreCount' => $GenreCount]);
     }
 
     /**
@@ -36,7 +40,7 @@ class SongController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Song $song)
+    public function show(Genre $genre)
     {
         //
     }
@@ -44,7 +48,7 @@ class SongController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Song $song)
+    public function edit(Genre $genre)
     {
         //
     }
@@ -52,7 +56,7 @@ class SongController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Song $song)
+    public function update(Request $request, Genre $genre)
     {
         //
     }
@@ -60,7 +64,7 @@ class SongController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Song $song)
+    public function destroy(Genre $genre)
     {
         //
     }

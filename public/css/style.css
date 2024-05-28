@@ -1,9 +1,9 @@
-h1{
-    text-align: center;
-    color: red;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 p{
-    color: white ;
+     color: white;
 }
 
 body{

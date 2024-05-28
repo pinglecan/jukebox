@@ -10,7 +10,7 @@
     @stack('styles')
     <title>Document</title>
 </head>
-<body>
+<body @stack('body')>
 {{--  naviegatie menu  --}}
 <header class="header-container">
     <h1 class="logo">sillycats.net</h1>
@@ -18,6 +18,7 @@
         <ul class="nav-list">
             <li><a class="nav-link" href="/hello">welkom</a></li>
             <li><a class="nav-link" href="/songs">songs</a></li>
+            <li><a class="nav-link" href="/genres">genres</a></li>
             <li><a class="nav-link" href="/randomSilly">silly</a></li>
         </ul>
 

@@ -3,11 +3,20 @@
 
 @section("content")
 
-    <h1>sick ass song pagina</h1>
+    <h1 class="text-red-600 font-bold text-3xl">sick ass song pagina</h1>
+    <br><br>
 
-    <p> the ONLY song we have is im so lucky lucky nightcore</p>
-    <br>
-    <p>"DE za list CLASIC!"  - cas jacop cornelus euser</p>
+    <h2 class="text-red-500"> Hier is de lijst met alle liedjes </h2>
+    <ul>
+        @foreach($songs as $song)
+            <br>
+            <li class="text-blue-300">
+                {{$song->name}}-{{$song->genre->name}}
+            </li>
+
+        @endforeach
+
+    </ul>
 
 @endsection
 
