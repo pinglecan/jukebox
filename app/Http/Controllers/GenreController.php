@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use App\Models\Song;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -14,9 +15,13 @@ class GenreController extends Controller
     {
         //view
         $genres = genre::all();
+        $songs = Song::all();
 
         //count the songs
-        $GenreCount = Genre->id::count();
+        if 
+
+        $GenreCount = $genres->id::count();
+        dd($GenreCount);
 
         return view('genres.index', ['genres' => $genres, 'GenreCount' => $GenreCount]);
     }
