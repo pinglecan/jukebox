@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Sillycat extends Controller
+class SillycatController extends Controller
 {
     public function Sillycat(){
         return view('Sillycat');

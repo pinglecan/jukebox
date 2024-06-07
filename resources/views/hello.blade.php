@@ -1,15 +1,4 @@
 @extends("layouts.master")
-<!doctype html>
-{{--<body>--}}
-{{--    --}}
-
-
-
-
-{{--</body>--}}
-{{--</html>--}}
-
-
 
 @section("content")
 

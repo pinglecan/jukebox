@@ -79,12 +79,12 @@ footer {
     width: 100%;
 }
 
-.footer-container {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+/*.footer-container {*/
+/*    margin: 0 auto;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*}*/
 
 .github-link {
     color: #1da1f2; /* You can use the GitHub color or any other color you like */

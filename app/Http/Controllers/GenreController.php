@@ -15,15 +15,9 @@ class GenreController extends Controller
     {
         //view
         $genres = genre::all();
-        $songs = Song::all();
 
-        //count the songs
-        if 
 
-        $GenreCount = $genres->id::count();
-        dd($GenreCount);
-
-        return view('genres.index', ['genres' => $genres, 'GenreCount' => $GenreCount]);
+        return view('genres.index', ['genres' => $genres]);
     }
 
     /**
@@ -31,7 +25,7 @@ class GenreController extends Controller
      */
     public function create()
     {
-        //
+        return view('genres.create');
     }
 
     /**
@@ -39,7 +33,10 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //gebruik model om data in database te zetten
+        Genre::create([
+            "name" => $request->genreName
+        ]);
     }
 
     /**
