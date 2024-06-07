@@ -37,6 +37,7 @@ class GenreController extends Controller
         Genre::create([
             "name" => $request->genreName
         ]);
+        return redirect()->route('genres.index');
     }
 
     /**

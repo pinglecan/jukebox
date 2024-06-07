@@ -24,7 +24,7 @@ class SongController extends Controller
      */
     public function create()
     {
-        return view('songsphp.create');
+        return view('songs.create');
     }
 
     /**
@@ -32,7 +32,9 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $songs = Song::all();
+        $genres = Genre::all();
+        return view('songs.index', ['songs' => $songs, 'genres' => $genres]);
     }
 
     /**

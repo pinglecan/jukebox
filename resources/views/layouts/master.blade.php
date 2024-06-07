@@ -10,7 +10,7 @@
     @stack('styles')
     <title>Document</title>
 </head>
-<body @stack('body')>
+<body class="@stack('body')">
 {{--  naviegatie menu  --}}
 <header class="header-container">
     <h1 class="logo">sillycats.net</h1>
@@ -31,7 +31,7 @@
 
 {{--  footer  --}}
 
-<footer>
+<footer class="bg-black text-white text-center fixed p-4 bottom-0 w-full">
     <div class="m-0 flex flex-col items-center">
         <p>&copy; 2024 Jelle Fiere. All Rights Reserved.</p>
         <p><a href="https://github.com/pinglecan" target="_blank" class="github-link">GitHub</a></p>
