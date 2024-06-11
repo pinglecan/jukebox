@@ -14,12 +14,16 @@ Route::get('/', function () {
 
 Route::get("/hello", [Welcome::class, 'hello']);
 Route::get("/Silly", [SillycatController::class, 'Sillycat']);
-Route::get("/songs", [SongController::class, 'index']);
-Route::get("/genres", [GenreController::class, 'index']);
-Route::get("/playlist", [PlaylistController::class, 'index']);
 
+Route::get("/genres", [GenreController::class, 'index'])->name('genres.index');
 Route::get("/genres/create", [GenreController::class, 'create']);
 Route::post("/genres/store", [GenreController::class, 'store']);
 
+Route::get("/songs", [SongController::class, 'index']);
 Route::get("/songs/create", [SongController::class, 'create']);
 Route::post("/songs/store", [SongController::class, 'store']);
+
+Route::get("/playlist", [PlaylistController::class, 'index']);
+Route::get("/playlist/create", [PlaylistController::class, 'create']);
+Route::post("/playlist/store", [PlaylistController::class, 'store']);
+

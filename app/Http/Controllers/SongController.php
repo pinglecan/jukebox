@@ -32,9 +32,24 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
+        //validate of the request
+
+        $validated = $request->validate([
+            'name' => "required|string",
+            'duration' => "required|integer|min:0",
+            'genre_id' => "required|integer|min:1|exists:genres,id",
+        ]);
+        //store to db
+
+        Genre::create([
+
+            "name" => $request->name,
+            "duration" => $request->duration,
+            "genre_id" => $request->genre_id
+        ]);
         $songs = Song::all();
         $genres = Genre::all();
-        return view('songs.index', ['songs' => $songs, 'genres' => $genres]);
+       return redirect()->route('songs.index');
     }
 
     /**

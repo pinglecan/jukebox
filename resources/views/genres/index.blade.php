@@ -13,7 +13,7 @@
         @foreach($genres as $genre)
             <br>
             <li class="text-blue-300">
-                {{$genre->name}}-2
+                {{$genre->name}}-{{$genre->songs->count()}}
             </li>
         @endforeach
 

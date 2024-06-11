@@ -20,7 +20,7 @@ class PlaylistController extends Controller
      */
     public function create()
     {
-        //
+        return view('playlist.create');
     }
 
     /**
