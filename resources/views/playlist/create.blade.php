@@ -15,4 +15,11 @@
             type="submit">
     </form>
 
+
+
 @endsection
+@push('footerStyle')
+
+    fixed bottom-0
+
+@endpush

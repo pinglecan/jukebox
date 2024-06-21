@@ -32,7 +32,7 @@
 
 {{--  footer  --}}
 
-<footer class="bg-black text-white text-center  p-4 w-full">
+<footer class="bg-black text-white text-center @stack('footerStyle') p-4 w-full">
     <div class="m-0 flex flex-col items-center">
         <p>&copy; 2024 Jelle Fiere. All Rights Reserved.</p>
         <p><a href="https://github.com/pinglecan" target="_blank" class="github-link">GitHub</a></p>
