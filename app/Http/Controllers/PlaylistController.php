@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use App\Models\Playlist;
+use App\Models\Song;
 use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
@@ -12,7 +14,9 @@ class PlaylistController extends Controller
      */
     public function index()
     {
-        return view('playlist.index');
+            $playlists = Playlist::all();
+
+        return view('playlist.index', ['playlists' => $playlists ]);
     }
 
     /**
@@ -21,6 +25,7 @@ class PlaylistController extends Controller
     public function create()
     {
         return view('playlist.create');
+
     }
 
     /**
@@ -28,7 +33,16 @@ class PlaylistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            "playlistName" => "|required|min:2",
+        ]);
+        //gebruik model om data in database te zetten
+        Playlist::create([
+            "name" => $request->playlistName
+        ]);
+
+        return redirect()->route('playlist.index');
+
     }
 
     /**
@@ -36,7 +50,8 @@ class PlaylistController extends Controller
      */
     public function show(Playlist $playlist)
     {
-        //
+        $songs = Song::all();
+        return view('playlist.show', ['playlist' => $playlist, 'songs' => $songs]);
     }
 
     /**
@@ -61,5 +76,24 @@ class PlaylistController extends Controller
     public function destroy(Playlist $playlist)
     {
         //
+    }
+
+    /**
+     * Add a song to the playlist
+     */
+
+    public function addSongToPlaylist(Playlist $playlist, Request $request)
+    {
+        //playlist
+
+        $song = $request->get("selectedSong");
+
+        $playlist->songs()->attach($song);
+
+        Return redirect()->back();
+
+
+        //song
+
     }
 }

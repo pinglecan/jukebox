@@ -8,7 +8,6 @@
        href="/genres/create">create</a> <br>
     <h2 class="text-red-500"> Hier is de lijst met alle genres en het aantal liedjes met deze genre </h2>
 
-    <button></button>
     <ul>
         @foreach($genres as $genre)
             <br>

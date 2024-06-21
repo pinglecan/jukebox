@@ -21,6 +21,7 @@
             <li><a class="nav-link" href="/songs">songs</a></li>
             <li><a class="nav-link" href="/genres">genres</a></li>
             <li><a class="nav-link" href="/Silly">silly</a></li>
+            <li><a class="nav-link" href="/user">user</a></li>
         </ul>
 
     </nav>
@@ -31,7 +32,7 @@
 
 {{--  footer  --}}
 
-<footer class="bg-black text-white text-center fixed p-4 bottom-0 w-full">
+<footer class="bg-black text-white text-center  p-4 w-full">
     <div class="m-0 flex flex-col items-center">
         <p>&copy; 2024 Jelle Fiere. All Rights Reserved.</p>
         <p><a href="https://github.com/pinglecan" target="_blank" class="github-link">GitHub</a></p>

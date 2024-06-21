@@ -17,8 +17,9 @@ class SongFactory extends Factory
     public function definition(): array
     {
         return [
-            "name" => fake()->name,
+            "name" => fake()->company,
             "duration" => fake()->numberBetween(30,330),
+            "artist" => fake()->name,
             "genre_id"=> fake()->numberBetween(1,100),
         ];
     }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('duration');
+            $table->string('artist');
             $table->foreignId('genre_id');
             $table->timestamps();
         });
