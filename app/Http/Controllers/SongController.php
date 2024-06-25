@@ -57,7 +57,7 @@ class SongController extends Controller
      */
     public function show(Song $song)
     {
-        //
+        return view('songs.view', ['song' => $song]);
     }
 
     /**

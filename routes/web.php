@@ -34,7 +34,7 @@ Route::post("/genres/store", [GenreController::class, 'store']);
 Route::get("/songs", [SongController::class, 'index'])->name('songs.index');
 Route::get("/songs/create", [SongController::class, 'create']);
 Route::post("/songs/store", [SongController::class, 'store']);
-Route::get("/songs/show/{song}",[SongController::class, 'show']);
+Route::get("/songs/view/{song}",[SongController::class, 'show'])->name('songs.view');
 
 Route::get("/playlist", [PlaylistController::class, 'index'])->name('playlist.index');
 Route::get("/playlist/create", [PlaylistController::class, 'create']);
