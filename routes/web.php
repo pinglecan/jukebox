@@ -22,8 +22,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
-
 Route::get("/hello", [Welcome::class, 'hello']);
 Route::get("/Silly", [SillycatController::class, 'Sillycat']);
 
@@ -41,3 +39,6 @@ Route::get("/playlist/create", [PlaylistController::class, 'create']);
 Route::post("/playlist/store", [PlaylistController::class, 'store']);
 Route::get("/playlist/view/{playlist}", [PlaylistController::class, 'show'])->name('playlist.show');
 Route::post("/playlist/addsong/{playlist}", [PlaylistController::class, 'addSongToPlaylist'])->name('playlist.addSong');
+Route::delete("playlist/removesong/{playlistid}", [PlaylistController::class, 'RemovezSongFromPlaylist'])->name('playlist.removeSong');
+
+require __DIR__.'/auth.php';

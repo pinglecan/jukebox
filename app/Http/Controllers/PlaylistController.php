@@ -14,9 +14,9 @@ class PlaylistController extends Controller
      */
     public function index()
     {
-            $playlists = Playlist::all();
+        $playlists = Playlist::all();
 
-        return view('playlist.index', ['playlists' => $playlists ]);
+        return view('playlist.index', ['playlists' => $playlists]);
     }
 
     /**
@@ -90,10 +90,21 @@ class PlaylistController extends Controller
 
         $playlist->songs()->attach($song);
 
-        Return redirect()->back();
+        return redirect()->back();
 
 
         //song
 
+    }
+
+    public function RemoveSongFromPlaylist(Request $request)
+    {
+        $playlist = Playlist::find($playlistid);
+
+        $song = $request->get("selectedSong");
+
+        $playlist->songs()->detach($song);
+
+        return redirect()->back();
     }
 }
