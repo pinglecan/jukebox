@@ -97,14 +97,12 @@ class PlaylistController extends Controller
 
     }
 
-    public function RemoveSongFromPlaylist(Request $request)
+    public function RemoveSongFromPlaylist(Playlist $playlist, Song $song, Request $request)
     {
-        $playlist = Playlist::find($playlistid);
 
-        $song = $request->get("selectedSong");
-
-        $playlist->songs()->detach($song);
+        $playlist->songs()->detach($song->id);
 
         return redirect()->back();
     }
+
 }

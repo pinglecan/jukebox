@@ -9,15 +9,13 @@
 
 
     @foreach($playlist->songs as $song)
-
         <a class="text-white" href="/songs/view/{{$song->id}}">- {{$song->name}}</a>
-        <form action="{{ url('$playlist/removesong/' . $song->id) }}" method="POST">
+        <form action="/playlist/{{$playlist->id}}/removesong/{{$song->id}}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit">Remove song</button>
+            <button class="text-red-800" type="submit">Remove song</button>
         </form>
         <br>
-
     @endforeach
 
 
