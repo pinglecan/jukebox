@@ -6,9 +6,11 @@
 @section('content')
 
     <h1 class="text-red-600 font-bold text-3xl">{{$playlist->name}}</h1>
-
-
+    <br>
+    <p>Total Duration: {{ gmdate('i:s', $totalDuration) }}</p>
+    <br>
     @foreach($playlist->songs as $song)
+
         <a class="text-white" href="/songs/view/{{$song->id}}">- {{$song->name}}</a>
         <form action="/playlist/{{$playlist->id}}/removesong/{{$song->id}}" method="POST">
             @csrf

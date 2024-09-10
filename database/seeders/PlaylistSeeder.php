@@ -13,7 +13,11 @@ class PlaylistSeeder extends Seeder
      */
     public function run(): void
     {
-        Playlist::create(["name"=> "Pinglevibes"]);
+        Playlist::create([
+            "name" => "Pinglevibes",
+            "description" => "Something cool",
+            "user_id" => "2"
+        ]);
         Playlist::factory()->count(50)->create();
     }
 }

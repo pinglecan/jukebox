@@ -9,12 +9,14 @@ use App\Http\Controllers\SongController;
 use App\Http\Controllers\Welcome;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('hello');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -22,7 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get("/hello", [Welcome::class, 'hello']);
+Route::get("/hello", [Welcome::class, 'hello'])->name('hello');
 Route::get("/Silly", [SillycatController::class, 'Sillycat'])->name('Sillycat');
 
 Route::get("/genres", [GenreController::class, 'index'])->name('genres.index');

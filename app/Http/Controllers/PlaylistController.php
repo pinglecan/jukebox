@@ -6,6 +6,7 @@ use App\Models\Genre;
 use App\Models\Playlist;
 use App\Models\Song;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlaylistController extends Controller
 {
@@ -48,10 +49,15 @@ class PlaylistController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Playlist $playlist)
+    public function show($id)
     {
+        $playlist = Playlist::with('songs')->find($id);
+
+        $totalDuration = $playlist->songs->sum('duration');
+
         $songs = Song::all();
-        return view('playlist.show', ['playlist' => $playlist, 'songs' => $songs]);
+        return view('playlist.show', ['playlist' => $playlist, 'songs' => $songs], compact('playlist', 'totalDuration'));
+
     }
 
     /**
@@ -92,11 +98,11 @@ class PlaylistController extends Controller
 
         return redirect()->back();
 
-
-        //song
-
     }
 
+    /**
+     * remove a song from the playlist
+     */
     public function RemoveSongFromPlaylist(Playlist $playlist, Song $song, Request $request)
     {
 

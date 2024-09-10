@@ -19,6 +19,7 @@ class PlaylistFactory extends Factory
         return [
             'name' => fake() ->name,
             'description' => fake() ->streetName,
+            'user_id' => '2'
         ];
     }
 }
