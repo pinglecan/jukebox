@@ -8,7 +8,6 @@
     <a class="hover:bg-amber-50 hover:border-gray-700 hover:rounded-lg p-1 duration-200 text-blue-300"
        href="/songs/create">Create a song</a>
     <br><br>
-    <h2 class="text-red-500"> Hier is de lijst met alle liedjes </h2>
     <ul>
         @foreach($songs as $song)
             <br>
@@ -24,4 +23,9 @@
 
 @endsection
 
+@push('footerStyle')
+
+    fixed bottom-0
+
+@endpush
 
