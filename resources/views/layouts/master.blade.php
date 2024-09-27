@@ -18,10 +18,10 @@
         <ul class="nav-list">
             <li><a class="nav-link" href="/hello">welkom</a></li>
             <li><a class="nav-link" href="/playlist">playlist</a></li>
-            <li><a class="nav-link" href="/songs">songs</a></li>
-            <li><a class="nav-link" href="/genres">genres</a></li>
-            <li><a class="nav-link" href="/Silly">silly</a></li>
-            <li><a class="nav-link" href="/profile">user</a></li>
+                <li><a class="nav-link" href="/songs">songs</a></li>
+                <li><a class="nav-link" href="/genres">genres</a></li>
+                <li><a class="nav-link" href="/Silly">silly</a></li>
+                <li><a class="" href="/register"><img src="./img/cat.svg" alt="cat icon"></a></li>
         </ul>
 
     </nav>

@@ -20,6 +20,11 @@ class PlaylistController extends Controller
         return view('playlist.index', ['playlists' => $playlists]);
     }
 
+    public function userIndex()
+    {
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -39,7 +44,9 @@ class PlaylistController extends Controller
         ]);
         //gebruik model om data in database te zetten
         Playlist::create([
-            "name" => $request->playlistName
+            "name" => $request->playlistName,
+            "description" => $request->playlistDescription,
+            "user_id" => Auth::id(),
         ]);
 
         return redirect()->route('playlist.index');
@@ -60,12 +67,13 @@ class PlaylistController extends Controller
 
     }
 
+
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Playlist $playlist)
     {
-        //
+        return view('playlist.edit', ['playlist' => $playlist]);
     }
 
     /**

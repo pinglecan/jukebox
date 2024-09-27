@@ -35,11 +35,14 @@ Route::get("/songs", [SongController::class, 'index'])->name('songs.index');
 Route::get("/songs/create", [SongController::class, 'create']);
 Route::post("/songs/store", [SongController::class, 'store']);
 Route::get("/songs/view/{song}",[SongController::class, 'show'])->name('songs.view');
+Route::get("/songs/addToTempPlaylist/{song}",[SongController::class, 'addSongToTempPlaylist'])->name('songs.addToTempPlaylist');
 
 Route::get("/playlist", [PlaylistController::class, 'index'])->name('playlist.index');
 Route::get("/playlist/create", [PlaylistController::class, 'create']);
+Route::get("/playlist/edit/{playlist}", [PlaylistController::class, 'edit'])->name('playlist.edit');
 Route::post("/playlist/store", [PlaylistController::class, 'store']);
 Route::get("/playlist/view/{playlist}", [PlaylistController::class, 'show'])->name('playlist.show');
+Route::get("/playlist/user/{user}", [PlaylistController::class, 'indexUser'])->name('playlist.User');
 Route::post("/playlist/addsong/{playlist}", [PlaylistController::class, 'addSongToPlaylist'])->name('playlist.addSong');
 Route::delete("playlist/{playlist}/removesong/{song}", [PlaylistController::class, 'RemoveSongFromPlaylist'])->name('playlist.removeSong');
 

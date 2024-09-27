@@ -49,7 +49,7 @@ class SongController extends Controller
         ]);
         $songs = Song::all();
         $genres = Genre::all();
-       return redirect()->route('songs.index');
+        return redirect()->route('songs.index');
     }
 
     /**
@@ -82,5 +82,14 @@ class SongController extends Controller
     public function destroy(Song $song)
     {
         //
+    }
+
+    public function addSongToTempPlaylist(Song $song)
+    {
+        if (!session()->has('tempPlaylist')) {
+            session()->put("tempSongs", []);
+        }
+        Session()->push("tempSongs", $song->id);
+        return redirect()->back();
     }
 }
