@@ -6,7 +6,7 @@
     <h1 class="text-red-600 font-bold text-3xl">sick ass song pagina</h1>
 
     dit is de session
-    {{var_dump(session()->get("tempSongs"))}};
+    {{var_dump(session("tempSongs"))}};
     <br><br>
     <a class="hover:bg-amber-50 hover:border-gray-700 hover:rounded-lg p-1 duration-200 text-blue-300"
        href="/songs/create">Create a song</a>

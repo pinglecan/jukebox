@@ -13,6 +13,10 @@
        href="/playlist/create">Create your playlist</a>
 
     <ul>
+        @if (!session()->has('tempPlaylist'))
+            <a class="text-white" href="{{route("playlist.TempPlaylist")}}">Turn temporary playlist into actual playlist</a>
+        @endif
+
         @foreach($playlists as $playlist)
             <br>
             <li class="text-green-500">

@@ -86,10 +86,10 @@ class SongController extends Controller
 
     public function addSongToTempPlaylist(Song $song)
     {
-        if (!session()->has('tempPlaylist')) {
+        if (!session()->has('tempSongs')) {
             session()->put("tempSongs", []);
         }
-        Session()->push("tempSongs", $song->id);
+        session()->push("tempSongs", $song->id);
         return redirect()->back();
     }
 }

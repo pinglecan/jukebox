@@ -7,6 +7,7 @@ use App\Models\Playlist;
 use App\Models\Song;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PlaylistController extends Controller
 {
@@ -39,9 +40,6 @@ class PlaylistController extends Controller
      */
     public function store(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect()->route('playlist.index')->with('error', 'Log in to save your playlist');
-        }
 
         $validated = $request->validate([
             "playlistName" => "|required|min:2",
@@ -121,6 +119,34 @@ class PlaylistController extends Controller
         $playlist->songs()->detach($song->id);
 
         return redirect()->back();
+    }
+
+    public function TempPlaylist()
+    {
+        return view('playlist.TempPlaylist');
+    }
+
+    public function storeTempPlaylist(Request $request)
+    {
+
+        $playlist = Playlist::create([
+            "name" => $request->playlistName,
+            "description" => $request->playlistDescription,
+            "user_id" => Auth::id(),
+        ]);
+
+        $songs = session('tempSongs');
+
+
+        $playlist->songs()->attach($songs);
+        session()->forget('tempSongs');
+        return redirect()->route('playlist.index');
+    }
+
+    public function submitEdit(Request $request){
+
+
+
     }
 
 }

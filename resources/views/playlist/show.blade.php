@@ -7,6 +7,8 @@
 
     <h1 class="text-red-600 font-bold text-3xl">{{$playlist->name}}</h1>
     <br>
+    <a href="{{route("playlist.edit",$playlist)}}" class="text-blue-400">Edit playlist</a>
+    <br>
     <p>Total Duration: {{ gmdate('i:s', $totalDuration) }}</p>
     <br>
     @foreach($playlist->songs as $song)
