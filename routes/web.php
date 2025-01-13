@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\SillycatController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\Welcome;
-
+use Illuminate\Support\Facades\Session;
 Route::get('/', function () {
     return view('hello');
 });
@@ -46,4 +47,8 @@ Route::get("/playlist/user/{user}", [PlaylistController::class, 'indexUser'])->n
 Route::post("/playlist/addsong/{playlist}", [PlaylistController::class, 'addSongToPlaylist'])->name('playlist.addSong');
 Route::delete("playlist/{playlist}/removesong/{song}", [PlaylistController::class, 'RemoveSongFromPlaylist'])->name('playlist.removeSong');
 
+
+Route::get("/session/", [SessionController::class, 'index'])->name('session.index');
+Route::get("/session/add", [SessionController::class, 'add'])->name('session.add');
+Route::get("/session/remove", [SessionController::class, 'remove'])->name('session.remove');
 require __DIR__.'/auth.php';

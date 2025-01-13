@@ -6,6 +6,7 @@
     <br><br>
     <p> welkom op de meest silly pagina van het hele internet.</p>
 
+
 @endsection
 
 @push('footerStyle')

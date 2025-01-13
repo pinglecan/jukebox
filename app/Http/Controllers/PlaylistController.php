@@ -39,6 +39,10 @@ class PlaylistController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect()->route('playlist.index')->with('error', 'Log in to save your playlist');
+        }
+
         $validated = $request->validate([
             "playlistName" => "|required|min:2",
         ]);
