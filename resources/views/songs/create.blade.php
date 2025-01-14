@@ -27,7 +27,7 @@
         <br><br>
         <input
             class="text-green-400 hover:bg-amber-50 p-1 duration-200 hover:cursor-pointer hover:border-gray-700 hover:rounded-lg "
-            type="submit">
+            type="submit" value="Maak nieuwe song aan">
     </form>
 @endsection
 @push('footerStyle')

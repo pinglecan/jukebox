@@ -6,13 +6,12 @@
     <br><br>
     <a class="hover:bg-amber-50 hover:border-gray-700 hover:rounded-lg p-1 duration-200 text-blue-300"
        href="/genres/create">create</a> <br>
-    <h2 class="text-red-500"> Hier is de lijst met alle genres en het aantal liedjes met deze genre </h2>
 
     <ul>
         @foreach($genres as $genre)
             <br>
             <li class="text-green-500">
-                {{$genre->name}}-{{$genre->songs->count()}}
+                <a href="{{route('genres.show',$genre)}}">{{$genre->name}}-{{$genre->songs->count()}}</a>
             </li>
         @endforeach
 

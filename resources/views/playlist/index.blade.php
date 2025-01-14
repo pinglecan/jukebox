@@ -14,17 +14,28 @@
 
     <ul>
         @if (!session()->has('tempPlaylist'))
-            <a class="text-white" href="{{route("playlist.TempPlaylist")}}">Turn temporary playlist into actual playlist</a>
+            <a class="text-white" href="{{route("playlist.TempPlaylist")}}">Turn temporary playlist into actual
+                playlist</a>
         @endif
 
         @foreach($playlists as $playlist)
-            <br>
-            <li class="text-green-500">
-                <a href="/playlist/view/{{$playlist->id}}">
-                    {{$playlist->name}}
-                </a>
-            </li>
+            @if(Auth::user())
+                @if ($playlist->user_id == Auth::user()->id)
+                    <br>
+                    <li class="text-green-500">
+                        <a href="/playlist/view/{{$playlist->id}}">
+                            {{$playlist->name}}
+                        </a>
+                    </li>
+                @endif
+            @endif
         @endforeach
 
     </ul>
 @endsection
+
+@push('footerStyle')
+
+    fixed bottom-0
+
+@endpush

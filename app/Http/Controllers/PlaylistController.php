@@ -143,8 +143,29 @@ class PlaylistController extends Controller
         return redirect()->route('playlist.index');
     }
 
-    public function submitEdit(Request $request){
+    public function SubmitEdit(Request $request, $id){
+        // Validate the input
 
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string|max:1000',
+        ]);
+
+        // Find the playlist by ID
+        $playlist = Playlist::findOrFail($id);
+
+
+
+        if ($playlist->user_id !== auth()->id()) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
+
+        // Update the playlist
+        $playlist->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+        ]);
+        return redirect()->route('playlist.show', $playlist->id);
 
 
     }

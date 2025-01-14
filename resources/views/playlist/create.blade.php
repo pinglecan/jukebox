@@ -13,7 +13,7 @@
         <input class="text-gray-600 rounded-lg" type="text" name="playlistDescription" placeholder="playlist description..." >
 
         <br><br>
-        <input class="text-green-400 hover:bg-amber-50 p-1 duration-200 hover:cursor-pointer hover:border-gray-700 hover:rounded-lg " type="submit">
+        <input value="Maak playlist" class="text-green-400 hover:bg-amber-50 p-1 duration-200 hover:cursor-pointer hover:border-gray-700 hover:rounded-lg " type="submit">
     </form>
 
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/style.css">
     @vite('resources/css/app.css')
     @stack('styles')
-    <title>Document</title>
+    <title>Silly Cats.net</title>
 </head>
 <body class="@stack('body')">
 {{--  naviegatie menu  --}}

@@ -28,7 +28,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get("/hello", [Welcome::class, 'hello'])->name('hello');
 Route::get("/Silly", [SillycatController::class, 'Sillycat'])->name('Sillycat');
+
 Route::get("/genres", [GenreController::class, 'index'])->name('genres.index');
+Route::get("/genres/view/{genre}", [GenreController::class, 'show'])->name('genres.show');
 
 Route::get("/songs", [SongController::class, 'index'])->name('songs.index');
 Route::get("/songs/view/{song}",[SongController::class, 'show'])->name('songs.view');
@@ -55,7 +57,7 @@ Route::middleware(["auth"])->group(function () {
     Route::post("/songs/store", [SongController::class, 'store']);
     Route::get("/genres/create", [GenreController::class, 'create']);
     Route::post("/genres/store", [GenreController::class, 'store']);
-    Route::post("/playlist/submitEdit{playlist}", [PlaylistController::class, 'submitEdit'])->name('playlist.submitEdit');
+    Route::post("/playlist/submitEdit/{playlist}", [PlaylistController::class, 'SubmitEdit'])->name('playlist.submitEdit');
 });
 
 
